@@ -11,7 +11,10 @@ assign: $(OBJS)
 	$(GCC) $(TESTFLAGS) $(OBJS) -o assign -lm
 
 .c.o: 
-	$(GCC) $(TESTFLAGS) -c $*.c 
+	$(GCC) $(TESTFLAGS) -c $*.c
+
+grade: assign
+	./assign scores.csv
 
 
 clean: # remove all machine generated files
